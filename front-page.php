@@ -4,28 +4,59 @@
  */
 get_header(); ?>
 
-<!-- Begin lorem ipsum -->
-<h1>HTML Ipsum Presents</h1>
-
-<p><strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. <em>Aenean ultricies mi vitae est.</em> Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, <code>commodo vitae</code>, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. <a href="#">Donec non enim</a> in turpis pulvinar facilisis. Ut felis.</p>
-
-<h2>Header Level 2</h2>
-
-<ol>
-   <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
-   <li>Aliquam tincidunt mauris eu risus.</li>
-</ol>
-
-<blockquote><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at felis aliquet congue. Ut a est eget ligula molestie gravida. Curabitur massa. Donec eleifend, libero at sagittis mollis, tellus est malesuada tellus, at luctus turpis elit sit amet quam. Vivamus pretium ornare est.</p></blockquote>
-
-<h3>Header Level 3</h3>
-
-<ul>
-   <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
-   <li>Aliquam tincidunt mauris eu risus.</li>
-</ul>
-
-<!-- End lorem ipsum -->
-
+<div class="dates">
+	<h3>dates</h3>
+	<div class="side">
+		
+	</div>
+	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 10">
+		<path
+			stroke="none"
+			fill="#4a7dec"
+			d="M0,0L40,10L0,10Z"
+		/>
+	</svg>
+</div>
+<div class="photo-tiles">
+	<?php
+		$image_one_id = get_post_meta( get_the_ID(), 'jldavis_front_page_image_one_id', 1 );
+		$image_two_id = get_post_meta( get_the_ID(), 'jldavis_front_page_image_two_id', 1 );
+		$image_three_id = get_post_meta( get_the_ID(), 'jldavis_front_page_image_three_id', 1 );
+	?>
+	<div class="image-one">
+		<?php echo wp_get_attachment_image( $image_one_id, 'full' ); ?>
+	</div>
+	<div class="image-two">
+		<?php echo wp_get_attachment_image( $image_two_id, 'full' ); ?>
+	</div>
+	<div class="image-three">
+		<?php echo wp_get_attachment_image( $image_three_id, 'full' ); ?>
+	</div>
+</div>
+<div class="bio">
+	<h3>bio</h3>
+	<div class="side">
+		<div class="inner-text">
+			<?php echo get_post_meta( get_the_ID(), 'jldavis_front_page_bio', 1 ) ?>
+		</div>
+	</div>
+	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 10">
+		<path
+			stroke="none"
+			fill="#4a7dec"
+			d="M40,0L40,10L0,10Z"
+		/>
+	</svg>
+</div>
+<div class="links">
+	<a href="" class="writings">
+		<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/typewriter.png" alt="old typewriter">
+		<h4>writings</h4>
+	</a>
+	<a href="" class="media">
+		<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/records.png" alt="vinyl records">
+		<h4>media</h4>
+	</a>
+</div>
 <?php
 get_footer();

@@ -1,0 +1,49 @@
+.site-footer {
+	background: $color_blue;
+	padding: 16px 0;
+	text-align: center;
+
+	p {
+		margin: 0 0;
+
+		&.copyright {
+			color: $color_white;
+			font-size: 1.25rem;
+			margin-bottom: 8px;
+
+			@include breakpoint(1000px) {
+				font-size: 1.8rem;
+			}
+
+			@include breakpoint(1200px) {
+				font-size: 2.5rem;
+			}
+
+			@include breakpoint(1600px) {
+				font-size: 4rem;
+			}
+		}
+
+		&.nate {
+			color: #ccc;
+			font-size: 0.9rem;
+
+			@include breakpoint(1000px) {
+				font-size: 1.2rem;
+			}
+
+			@include breakpoint(1200px) {
+				font-size: 1.75rem;
+			}
+
+			@include breakpoint(1600px) {
+				font-size: 2.75rem;
+			}
+
+			a {
+				border-bottom: 0.15rem solid #ccc;
+				color: $color_white;
+			}
+		}
+	}
+}

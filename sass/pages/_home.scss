@@ -1,0 +1,159 @@
+.home {
+
+	h3 {
+		font-size: 5rem;
+		margin: 0 0;
+
+		@include breakpoint(600px) {
+			font-size: 8rem;
+		}
+
+		@include breakpoint(1000px) {
+			font-size: 10rem;
+		}
+
+		@include breakpoint(1800px) {
+			font-size: 14rem;
+		}
+	}
+
+	.dates {
+		
+	}
+
+	.photo-tiles {
+		display: flex;
+		margin-bottom: -4px;
+		width: 100vw;
+
+		img {
+			height: auto;
+			width: 100%;
+		}
+	}
+
+	.bio {
+		background: $color_dark-gray;
+		border-top: 0.3rem solid $color_orange;
+
+		h3 {
+			color: $color_white;
+			text-align: right;
+
+			@include breakpoint(1000px) {
+				float: right;
+				width: 30%;
+			}
+		}
+
+		.side {
+			box-sizing: border-box;
+			color: $color_white;
+			font-size: 1.25rem;
+			line-height: 1.5;
+			padding: 0 2rem;
+
+			@include breakpoint(700px) {
+				font-size: 1.5rem;
+				padding: 0 5rem;
+				width: 80%;
+			}
+
+			@include breakpoint(1000px) {
+				float: left;
+				margin-bottom: -2rem;
+				padding: 6rem 6rem 0 6rem;
+				width: 70%;
+			}
+
+			@include breakpoint(1200px) {
+				font-size: 2rem;
+				padding: 6rem 8rem 0 8rem;
+			}
+
+			@include breakpoint(1900px) {
+				padding: 6rem 16rem 0 16rem;
+				width: 60%;
+			}
+		}
+	}
+
+	.links {
+		display: flex;
+		margin-bottom: -8px;
+		width: 100vw;
+
+		.media,
+		.writings {
+			display: block;
+			position: relative;
+
+			h4 {
+				color: $color_white;
+				font-size: 2.25rem;
+				margin: 10px 0;
+				position: absolute;
+
+				@include breakpoint(440px) {
+					font-size: 3rem;
+				}
+
+				@include breakpoint(700px) {
+					font-size: 5rem;
+				}
+
+				@include breakpoint(1100px) {
+					font-size: 8rem;
+				}
+
+				@include breakpoint(1800px) {
+					font-size: 12rem;
+				}
+			}
+
+			img {
+				height: auto;
+				width: 100%;
+
+				&:hover {
+					filter: brightness(0.5);
+				}
+			}
+		}
+
+		.media {
+			flex: 1.1997649;
+
+			h4 {
+				top: 0;
+				right: 5%;
+			}
+		}
+
+		.writings {
+			flex: 0.76947705;
+
+			h4 {
+				bottom: 0;
+				font-size: 1.75rem;
+				left: 5%;
+
+				@include breakpoint(440px) {
+					font-size: 2.25rem;
+				}
+
+				@include breakpoint(700px) {
+					font-size: 3.75rem;
+				}
+
+				@include breakpoint(1100px) {
+					font-size: 6rem;
+				}
+
+				@include breakpoint(1800px) {
+					font-size: 9rem;
+				}
+			}
+		}
+	}
+}

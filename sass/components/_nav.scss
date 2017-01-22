@@ -8,8 +8,9 @@ nav {
 	border-bottom: 0.3rem solid $color_orange;
 	box-sizing: border-box;
 	display: flex;
-	height: 50px;
-	padding: 0 10px;
+	height: 60px;
+	justify-content: space-between;
+	padding: 0 20px;
 	position: relative;
 	width: 100%;
 
@@ -20,6 +21,7 @@ nav {
 
 	h1 {
 		color: $color_white;
+		font-size: 1.75rem;
 		margin: 0;
 
 		@include breakpoint(900px) {
@@ -34,7 +36,7 @@ nav {
 	.hamburger {
 		cursor: pointer;
 		height: 32px;
-		position: absolute;
+		position: relative;
 		right: 10px;
 		transition: .5s ease-in-out;
 		width: 40px;
@@ -51,7 +53,7 @@ nav {
 			position: absolute;
 			transform: rotate(0deg);
 			transition: 0.25s ease-in-out;
-			width: 100%;
+			width: 40px;
 
 			&:nth-child(1) {
 				top: 0px;
@@ -97,26 +99,38 @@ nav {
 	#primary-menu {
 		background: rgba(0,0,0,0.75);
 		display: none;
+		font-size: 2rem;
 		list-style: none;
 		margin: 0;
 		padding: 0 30px;
 		position: absolute;
-		right: 0;
+		right: -30px;
 		text-align: center;
-		top: 50px;
+		top: 48px;
 		z-index: 999;
 
 		&.open {
 			display: block;
 		}
 
+		@include breakpoint(400px) {
+			font-size: 1.75rem;
+		}
+
 		@include breakpoint(900px) {
-			top: 65px;
+			font-size: 2.5rem;
+			right: -60px;
+			top: 50px;
+		}
+
+		@include breakpoint(1200px) {
+			font-size: 3.5rem;
 		}
 
 		li {
 
 			a {
+				@include font-family('overpass');
 				color: $color_white;
 			}
 

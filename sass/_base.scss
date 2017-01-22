@@ -8,7 +8,7 @@ h6 {
 }
 
 a {
-	@include font-family('overpass');
+	@include font-family('source sans');
 	text-decoration: none;
 }
 
@@ -18,4 +18,8 @@ p {
 
 body {
 	margin: 0;
+}
+
+svg {
+	margin: -6px 0;
 }

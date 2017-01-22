@@ -35,6 +35,9 @@ class Jldavis_Functions {
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_script' ) );
 
 		add_action( 'after_setup_theme', array( $this, 'setup' ) );
+
+		// Filters
+		add_filter( 'body_class', array( $this, 'add_body_class' ) );
 	}
 
 	/**
@@ -82,6 +85,19 @@ class Jldavis_Functions {
 			'20170121',
 			true
 		);
+	}
+
+	/**
+	 * Add slug to body class
+	 */
+	public function add_body_class( $classes ) {
+		global $post;
+
+		if( isset( $post ) ) {
+			$classes[] = $post->post_name;
+		}
+
+		return $classes;
 	}
 }
 

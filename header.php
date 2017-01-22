@@ -23,11 +23,11 @@
 		<span></span>
 		<span></span>
 		<span></span>
+		<?php wp_nav_menu( array( 
+			'theme_location' => 'main-nav-menu',
+			'menu_id' => 'primary-menu' 
+		) ); ?>
 	</div>
-	<?php wp_nav_menu( array( 
-		'theme_location' => 'main-nav-menu',
-		'menu_id' => 'primary-menu' 
-	) ); ?>
 </nav>
 <header id="masthead" class="site-header">
 	<div class="foreground"></div>
