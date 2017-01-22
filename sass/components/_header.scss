@@ -1,0 +1,52 @@
+.site-header {
+	align-items: center;
+	background-attachment: fixed;
+	background-image: url('../images/header-bg.png');
+	background-position: top center;
+	background-repeat: no-repeat;
+	background-size: 100% auto;
+	display: flex;
+	height: 50vw;
+	overflow: hidden;
+	position: relative;
+
+	@include breakpoint(1200px) {
+		height: 40vw;
+	}
+
+	.foreground {
+		background-image: url('../images/header-fg.png');
+		background-position: top center;
+		background-repeat: no-repeat;
+		background-size: 100% auto;
+		height: 100%;
+		left: 0;
+		position: absolute;
+		top: 0;
+		width: 100%;
+	}
+
+	h2 {
+		color: $color_white;
+		font-size: 3rem;
+		padding-left: 5%;
+		z-index: 1;
+
+		@include breakpoint(520px) {
+			font-size: 5rem;
+		}
+
+		@include breakpoint(700px) {
+			font-size: 8rem;
+		}
+
+		@include breakpoint(1400px) {
+			font-size: 12rem;
+		}
+	}
+
+	img {
+		height: auto;
+		width: 100vw;
+	}
+}

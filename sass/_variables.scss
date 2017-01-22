@@ -1,0 +1,35 @@
+/**
+ * Colors
+ */
+$color_black: #000;
+$color_white: #fff;
+
+$color_dark-gray: #404040;
+$color_light-gray: #b2b2b2;
+
+$color_blue: #4a7dec;
+
+$color_orange: #ff9055;
+
+/**
+ * A handy little mixin for fonts
+ * Options: 'overpass' or 'source sans'
+ */
+@mixin font-family( $font ) {
+	@if $font == 'overpass' {
+		font-family: 'Overpass', sans-serif;
+		font-weight: 800;
+	} @else if $font == 'source sans' {
+		font-family: 'Source Sans Pro', sans-serif;
+		font-weight: 400;
+	}
+}
+
+/**
+ * Simple mixin for simplifying media queries
+ */
+@mixin breakpoint($width) {
+	@media screen and (min-width: $width) {
+		@content;
+	}
+}

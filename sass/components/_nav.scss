@@ -1,0 +1,130 @@
+/**
+ * Hamburger menu based on: https://codepen.io/designcouch/pen/Atyop
+ */
+
+nav {
+	align-items: center;
+	background: $color_dark-gray;
+	border-bottom: 0.3rem solid $color_orange;
+	box-sizing: border-box;
+	display: flex;
+	height: 50px;
+	padding: 0 10px;
+	position: relative;
+	width: 100%;
+
+	@include breakpoint(900px) {
+		height: 65px;
+		padding: 0 30px;
+	}
+
+	h1 {
+		color: $color_white;
+		margin: 0;
+
+		@include breakpoint(900px) {
+			font-size: 2rem;
+		}
+
+		span {
+			color: $color_light-gray;
+		}
+	}
+
+	.hamburger {
+		cursor: pointer;
+		height: 32px;
+		position: absolute;
+		right: 10px;
+		transition: .5s ease-in-out;
+		width: 40px;
+
+		@include breakpoint(900px) {
+			right: 30px;
+		}
+
+		span {
+			background: $color_white;
+			border-radius: 9px;
+			display: block;
+			height: 6px;
+			position: absolute;
+			transform: rotate(0deg);
+			transition: 0.25s ease-in-out;
+			width: 100%;
+
+			&:nth-child(1) {
+				top: 0px;
+			}
+
+			&:nth-child(2),
+			&:nth-child(3) {
+				top: 13px;
+			}
+
+			&:nth-child(4) {
+				top: 28px;
+			}
+		}
+
+		&.open {
+
+			span{
+
+				&:nth-child(1) {
+					left: 50%;
+					top: 13px;
+					width: 0%;
+				}
+
+				&:nth-child(2) {
+					transform: rotate(45deg);
+				}
+
+				&:nth-child(3) {
+					transform: rotate(-45deg);
+				}
+
+				&:nth-child(4) {
+					left: 50%;
+					top: 13px;
+					width: 0%;
+				}
+			}
+		}
+	}
+
+	#primary-menu {
+		background: rgba(0,0,0,0.75);
+		display: none;
+		list-style: none;
+		margin: 0;
+		padding: 0 30px;
+		position: absolute;
+		right: 0;
+		text-align: center;
+		top: 50px;
+		z-index: 999;
+
+		&.open {
+			display: block;
+		}
+
+		@include breakpoint(900px) {
+			top: 65px;
+		}
+
+		li {
+
+			a {
+				color: $color_white;
+			}
+
+			&:nth-child(2n) {
+				a {
+					color: $color_light-gray;
+				}
+			}
+		}
+	}
+}
