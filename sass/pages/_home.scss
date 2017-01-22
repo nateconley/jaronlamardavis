@@ -34,7 +34,7 @@
 
 	.bio {
 		background: $color_dark-gray;
-		border-top: 0.3rem solid $color_orange;
+		border-top: 0.4rem solid $color_orange;
 
 		h3 {
 			color: $color_white;
@@ -85,8 +85,16 @@
 
 		.media,
 		.writings {
+			cursor: pointer;
 			display: block;
 			position: relative;
+
+			&:hover {
+
+				img {
+					filter: brightness(0.5);
+				}
+			}
 
 			h4 {
 				color: $color_white;
@@ -114,10 +122,6 @@
 			img {
 				height: auto;
 				width: 100%;
-
-				&:hover {
-					filter: brightness(0.5);
-				}
 			}
 		}
 
@@ -128,6 +132,17 @@
 				top: 0;
 				right: 5%;
 			}
+
+			svg {
+				left: 5%;
+				top: 10%;
+			}
+		}
+
+		svg {
+			position: absolute;
+			width: 35%;
+			z-index: 3;
 		}
 
 		.writings {
@@ -153,6 +168,11 @@
 				@include breakpoint(1800px) {
 					font-size: 9rem;
 				}
+			}
+
+			svg {
+				top: 50%;
+				left: 10%;
 			}
 		}
 	}

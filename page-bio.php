@@ -14,11 +14,11 @@ get_header(); ?>
 	<p><?php _e( 'Sorry, this page could not be found.' ); ?></p>
 <?php endif; ?>
 
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 10">
+<svg class="triangle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 8">
 	<path
 		stroke="none"
 		fill="#4a7dec"
-		d="M40,0L40,10L0,10Z"
+		d="M40,0L40,8L0,8Z"
 	/>
 </svg>
 

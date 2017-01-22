@@ -1,0 +1,42 @@
+.error404 {
+	text-align: center;
+
+	.inner-text {
+
+		h1 {
+			font-size: 8rem;
+			margin: 0 0;
+
+			@include breakpoint(1000px) {
+				font-size: 14rem;
+			}
+		}
+
+		h5 {
+			font-size: 1.5rem;
+			margin: 0 0;
+
+			@include breakpoint(1000px) {
+				font-size: 6rem;
+			}
+		}
+
+		a {
+			color: $color_dark-gray;
+			font-size: 1.25rem;
+			margin-bottom: 2rem;
+
+			@include breakpoint(1000px) {
+				font-size: 5.25rem;
+			}
+
+			&:hover {
+				color: $color_blue;
+			}
+		}
+	}
+
+	svg.triangle {
+		margin-bottom: -5px;
+	}
+}

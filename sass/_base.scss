@@ -20,6 +20,25 @@ body {
 	margin: 0;
 }
 
-svg {
-	margin: -6px 0;
+svg.triangle {
+	margin: -5px 0;
+}
+
+.inner-text {
+	margin: 0 auto;
+	max-width: 800px;
+	padding: 0 2rem;
+	line-height: 1.5;
+
+	@include breakpoint(600px) {
+		padding: 0 4rem;
+	}
+
+	@include breakpoint(800px) {
+		font-size: 1.3rem;
+	}
+
+	@include breakpoint(1000px) {
+		padding: 4rem 0 0 0;
+	}
 }

@@ -22,21 +22,5 @@ $(window).scroll(function(){
 	});
 });
 
-/**
- * Home page photo tiles aspect ratio
- */
-$('.home .photo-tiles img').each(function(){
-	var aspectRatio = $(this).attr('width') / $(this).attr('height');
-
-	// Add inline style so jQuery doesn't mess up flex
-	$(this).parent().attr(
-		'style',
-		'-webkit-box-flex: ' + aspectRatio +
-		';-webkit-flex: ' + aspectRatio +
-		';-ms-flex: ' + aspectRatio +
-		';flex: ' + aspectRatio
-	);
-})
-
 });
 })(jQuery);

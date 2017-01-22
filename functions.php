@@ -36,6 +36,8 @@ class Jldavis_Functions {
 
 		add_action( 'after_setup_theme', array( $this, 'setup' ) );
 
+		add_action( 'wp_head', array( $this, 'aspect_ratios' ) );
+
 		// Filters
 		add_filter( 'body_class', array( $this, 'add_body_class' ) );
 	}
@@ -98,6 +100,40 @@ class Jldavis_Functions {
 		}
 
 		return $classes;
+	}
+
+	/**
+	 * Front page tiles aspect ratios
+	 */
+	public function aspect_ratios() {
+		$image_one_meta = wp_get_attachment_metadata( get_post_meta( 5, 'jldavis_front_page_image_one_id', 1 ) );
+		$image_two_meta = wp_get_attachment_metadata( get_post_meta( 5, 'jldavis_front_page_image_two_id', 1 ) );
+		$image_three_meta = wp_get_attachment_metadata( get_post_meta( 5, 'jldavis_front_page_image_three_id', 1 ) );
+
+		$image_one_ratio = $image_one_meta[ 'width' ] / $image_one_meta[ 'height' ];
+		$image_two_ratio = $image_two_meta[ 'width' ] / $image_two_meta[ 'height' ];
+		$image_three_ratio = $image_three_meta[ 'width' ] / $image_three_meta[ 'height' ];
+
+		echo '<style type="text/css">';
+			echo '.home .photo-tiles .image-one {';
+				echo '-webkit-box-flex: ' . $image_one_ratio . ';';
+				echo '-webkit-flex: ' . $image_one_ratio . ';';
+				echo '-ms-box-flex: ' . $image_one_ratio . ';';
+				echo ' flex: ' . $image_one_ratio . ';';
+			echo '}';
+			echo '.home .photo-tiles .image-two {';
+				echo '-webkit-box-flex: ' . $image_two_ratio . ';';
+				echo '-webkit-flex: ' . $image_two_ratio . ';';
+				echo '-ms-box-flex: ' . $image_two_ratio . ';';
+				echo ' flex: ' . $image_two_ratio . ';';
+			echo '}';
+			echo '.home .photo-tiles .image-three {';
+				echo '-webkit-box-flex: ' . $image_three_ratio . ';';
+				echo '-webkit-flex: ' . $image_three_ratio . ';';
+				echo '-ms-box-flex: ' . $image_three_ratio . ';';
+				echo ' flex: ' . $image_three_ratio . ';';
+			echo '}';
+		echo '</style>';
 	}
 }
 
