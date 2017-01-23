@@ -87,6 +87,24 @@ class Jldavis_Functions {
 			'20170121',
 			true
 		);
+
+		// Media page script
+		if ( is_page( 'media' ) ) {
+			wp_register_script(
+				'masonry-js',
+				get_stylesheet_directory_uri() . '/js/masonry.min.js',
+				'20170122',
+				true
+			);
+
+			wp_enqueue_script( 
+				'jldavis-media-js', 
+				get_stylesheet_directory_uri() . '/js/media.js',
+				array( 'jquery', 'masonry-js' ),
+				'20170122',
+				true
+			);
+		}
 	}
 
 	/**

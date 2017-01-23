@@ -48,7 +48,7 @@ get_header(); ?>
 	</svg>
 </div>
 <div class="links">
-	<a href="" class="equipment">
+	<a href="<?php echo home_url(); ?>/equipment" class="equipment">
 		<svg class="triangle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
 			<circle fill="none" stroke="#fff" stroke-width="1" cx="5" cy="5" r="4" />
 			<path
@@ -58,10 +58,10 @@ get_header(); ?>
 				d="M4,3 L6,5 L4,7"
 			/>
 		</svg>
-		<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/typewriter.png" alt="old typewriter">
+		<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/drums.png" alt="old typewriter">
 		<h4>equipment</h4>
 	</a>
-	<a href="" class="media">
+	<a href="<?php echo home_url(); ?>/media" class="media">
 		<svg class="triangle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
 			<circle fill="none" stroke="#fff" stroke-width="1" cx="5" cy="5" r="4" />
 			<path

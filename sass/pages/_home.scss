@@ -109,24 +109,24 @@
 
 			h4 {
 				color: $color_white;
-				font-size: 2.25rem;
+				font-size: 1.9rem;
 				margin: 10px 0;
 				position: absolute;
 
 				@include breakpoint(440px) {
-					font-size: 3rem;
+					font-size: 2.5rem;
 				}
 
 				@include breakpoint(700px) {
-					font-size: 5rem;
+					font-size: 4.2rem;
 				}
 
 				@include breakpoint(1100px) {
-					font-size: 8rem;
+					font-size: 6.5rem;
 				}
 
 				@include breakpoint(1800px) {
-					font-size: 12rem;
+					font-size: 10rem;
 				}
 			}
 
@@ -157,32 +157,32 @@
 		}
 
 		.equipment {
-			flex: 0.76947705;
+			flex: 1.21860987;
 
 			h4 {
 				bottom: 0;
-				font-size: 1.4rem;
+				font-size: 1.5rem;
 				left: 5%;
 
 				@include breakpoint(440px) {
-					font-size: 1.9rem;
+					font-size: 2.1rem;
 				}
 
 				@include breakpoint(700px) {
-					font-size: 3rem;
+					font-size: 3.75rem;
 				}
 
 				@include breakpoint(1100px) {
-					font-size: 4.8rem;
+					font-size: 6rem;
 				}
 
 				@include breakpoint(1800px) {
-					font-size: 7.5rem;
+					font-size: 10rem;
 				}
 			}
 
 			svg {
-				top: 50%;
+				top: 30%;
 				left: 10%;
 			}
 		}

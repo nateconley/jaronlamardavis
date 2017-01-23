@@ -19,6 +19,11 @@ nav {
 		padding: 0 30px;
 	}
 
+	@include breakpoint(1400px) {
+		height: 80px;
+		padding: 0 50px;
+	}
+
 	h1 {
 		color: $color_white;
 		font-size: 1.75rem;
@@ -26,6 +31,10 @@ nav {
 
 		@include breakpoint(900px) {
 			font-size: 2rem;
+		}
+
+		@include breakpoint(1400px) {
+			font-size: 3rem;
 		}
 
 		span {
@@ -121,11 +130,16 @@ nav {
 			font-size: 2.5rem;
 			padding: 30px 30px;
 			right: -60px;
-			top: 50px;
+			top: 51px;
 		}
 
 		@include breakpoint(1200px) {
 			font-size: 3.5rem;
+		}
+
+		@include breakpoint(1400px) {
+			top: 59px;
+			right: -80px;
 		}
 
 		li {

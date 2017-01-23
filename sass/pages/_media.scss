@@ -1,0 +1,57 @@
+.media {
+
+	.grid {
+		margin: 20px auto;
+		max-width: 800px;
+
+		.grid-item {
+			margin-bottom: 1rem;
+			overflow: hidden;
+			width: 50%;
+
+			img,
+			iframe {
+				height: auto;
+				width: 100%;
+			}
+
+			.caption {
+				background: $color_blue;
+				border-radius: 0 0 0.5rem 0.5rem;
+				margin: 0;
+				padding: 0;
+			}
+		}
+	}
+
+	.sort-navigation {
+		background: $color_dark-gray;
+		border-bottom: 0.4rem solid $color_orange;
+		border-top: 0.4rem solid $color_orange;
+		display: flex;
+		padding: 10px;
+		justify-content: space-around;
+
+		@include breakpoint(1000px) {
+			padding: 10px 20%;
+		}
+
+		p {
+			@include font-family('overpass');
+			color: $color_white;
+			cursor: pointer;
+
+			@include breakpoint(1400px) {
+				font-size: 1.75rem;
+			}
+
+			&:hover {
+				color: #ccc;
+			}
+
+			&.active {
+				color: $color_orange;
+			}
+		}
+	}
+}
