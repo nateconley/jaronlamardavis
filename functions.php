@@ -91,8 +91,15 @@ class Jldavis_Functions {
 		// Media page script
 		if ( is_page( 'media' ) ) {
 			wp_register_script(
-				'masonry-js',
-				get_stylesheet_directory_uri() . '/js/masonry.min.js',
+				'isotope-js',
+				get_stylesheet_directory_uri() . '/js/isotope.min.js',
+				'20170122',
+				true
+			);
+
+			wp_register_script(
+				'images-loaded-js',
+				get_stylesheet_directory_uri() . '/js/images-loaded.min.js',
 				'20170122',
 				true
 			);
@@ -100,7 +107,7 @@ class Jldavis_Functions {
 			wp_enqueue_script( 
 				'jldavis-media-js', 
 				get_stylesheet_directory_uri() . '/js/media.js',
-				array( 'jquery', 'masonry-js' ),
+				array( 'jquery', 'images-loaded-js', 'isotope-js' ),
 				'20170122',
 				true
 			);

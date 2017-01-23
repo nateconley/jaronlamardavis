@@ -13,6 +13,7 @@ get_header(); ?>
 </div>
 
 <div class="grid">
+<div class="grid-measure"></div>
 <?php
 $entries = get_post_meta( get_the_ID(), 'media_repeat_group', true );
 

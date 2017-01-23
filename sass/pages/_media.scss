@@ -1,25 +1,50 @@
 .media {
 
 	.grid {
-		margin: 20px auto;
-		max-width: 800px;
+		box-sizing: border-box;
+		justify-content: space-between;
+		margin: 1rem auto;
+		max-width: 1400px;
+		min-height: 200px;
 
-		.grid-item {
-			margin-bottom: 1rem;
+		.grid-item,
+		.grid-measure {
+			float: left;
+			height: auto;
+			margin-bottom: 5%;
 			overflow: hidden;
 			width: 50%;
 
+			@include breakpoint(1000px) {
+				width: 33.3333%;
+			}
+
 			img,
-			iframe {
+			iframe,
+			.caption {
 				height: auto;
-				width: 100%;
+				margin: 0 5%;
+				width: 90%;
 			}
 
 			.caption {
 				background: $color_blue;
 				border-radius: 0 0 0.5rem 0.5rem;
-				margin: 0;
-				padding: 0;
+				box-sizing: border-box;
+				color: $color_white;
+				font-size: 1.25rem;
+				margin-top: -2%;
+				padding: 0.5rem 1rem;
+				text-align: center;
+			}
+
+			&.not-found {
+				font-size: 2rem;
+				height: auto;
+				margin: 2rem auto;
+				position: static;
+				text-align: center;
+				width: 100%;
 			}
 		}
 	}

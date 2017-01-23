@@ -8,27 +8,42 @@ $('.media .sort-navigation p').click(function() {
 	$('.media .sort-navigation p').removeClass('active');
 	$(this).addClass('active');
 
-	if ($(this).data('media-type') == 'all') {
-		$('.media .grid-tile').show();
+	var mediaType = $(this).data('media-type');
+
+	// remove nothing found
+	$('.media .not-found').remove();
+
+	if(mediaType == 'all') {
+		$grid.isotope({ filter: '*' });
 		return;
 	}
 
-	$('.media .grid-item').hide();
+	// Handle no grid items
+	if($('.media .grid-item.' + mediaType).length == 0) {
+		$grid.isotope({ filter: '.' + mediaType });
+		$content = $('<h3 class="grid-item not-found">Nothing found</h3>');
+		$grid.prepend($content);
+		return;
+	}
 
-	var mediaType = $(this).data('media-type');
-
-	$('.media .grid-item.' + mediaType).show();
-
-	$gird.layout();
+	$grid.isotope({ filter: '.' + mediaType });
 });
 
 /**
  * Initialize grid
  */
-var $grid = $('.media .grid').masonry({
-  // options
-  itemSelector: '.grid-item',
-  columnWidth: 200
+var $grid = $('.grid').isotope({
+	// options
+	itemSelector: '.grid-item',
+	layoutMode: 'masonry',
+	masonry: {
+		columnWidth: '.grid-measure',
+	},
+});
+
+//layout isotope after each image loads
+$grid.imagesLoaded().progress( function() {
+  $grid.isotope('layout');
 });
 
 });
