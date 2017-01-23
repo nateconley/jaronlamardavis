@@ -1,0 +1,52 @@
+.contact {
+
+	.nf-form-content {
+
+		label {
+			@include font-family('overpass');
+
+			@include breakpoint(1000px) {
+				font-size: 1.75rem;
+			}
+		}
+
+		input,
+		textarea {
+			@include font-family('source sans');
+			border: 0.1rem solid $color_light-gray;
+			border-radius: 0.1rem;
+			padding: 0.25rem;
+
+			@include breakpoint(1200px) {
+				padding: 0.5rem;
+			}
+
+			&:active,
+			&:focus {
+				outline-color: $color_orange;
+			}
+
+			&[type="button"] {
+				@include font-family('overpass');
+				background: $color_dark-gray;
+				color: $color_white;
+				font-size: 1.25rem;
+				width: 40%;
+
+				@include breakpoint(1000px) {
+					font-size: 1.5rem;
+				}
+			}
+		}
+	}
+
+	.nf-error-msg {
+		@include font-family('source sans');
+	}
+
+	.nf-response-msg {
+		@include font-family('overpass');
+		margin-top: 2rem;
+		text-align: center;
+	}
+}

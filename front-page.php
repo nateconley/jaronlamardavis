@@ -37,6 +37,7 @@ get_header(); ?>
 	<h3>bio</h3>
 	<div class="side">
 		<?php echo get_post_meta( get_the_ID(), 'jldavis_front_page_bio', 1 ) ?>
+		<a href="<?php echo home_url(); ?>/bio" class="read-more">Read More >></a>
 	</div>
 	<svg class="triangle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 8">
 		<path
@@ -47,7 +48,7 @@ get_header(); ?>
 	</svg>
 </div>
 <div class="links">
-	<a href="" class="writings">
+	<a href="" class="equipment">
 		<svg class="triangle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
 			<circle fill="none" stroke="#fff" stroke-width="1" cx="5" cy="5" r="4" />
 			<path
@@ -58,7 +59,7 @@ get_header(); ?>
 			/>
 		</svg>
 		<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/typewriter.png" alt="old typewriter">
-		<h4>writings</h4>
+		<h4>equipment</h4>
 	</a>
 	<a href="" class="media">
 		<svg class="triangle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
