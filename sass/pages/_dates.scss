@@ -1,0 +1,39 @@
+.dates {
+
+	.date {
+		text-align: center;
+
+		a {
+			color: $color_black;
+
+			&:hover {
+				color: $color_orange;
+
+				p.city {
+					color: $color_orange;
+				}
+			}
+
+			p {
+				display: inline-block;
+				line-height: 0;
+
+				@include breakpoint(500px) {
+					font-size: 1.25rem;
+				}
+
+				&.city {
+					color: #333;
+					font-weight: 700;
+					margin: 0 1rem;
+				}
+
+			}
+		}
+
+		&:nth-child(2n) {
+			background: #ccc;
+			border-radius: 0.25rem;
+		}
+	}
+}
