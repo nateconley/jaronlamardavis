@@ -20,7 +20,6 @@
 			}
 
 			img,
-			iframe,
 			.caption {
 				height: auto;
 				margin: 0 5%;
@@ -38,6 +37,10 @@
 				text-align: center;
 			}
 
+			.embed {
+				display: none;
+			}
+
 			&.not-found {
 				font-size: 2rem;
 				height: auto;
@@ -45,6 +48,40 @@
 				position: static;
 				text-align: center;
 				width: 100%;
+			}
+
+			iframe {
+				height: 80vw;
+				left: 0;
+				position: fixed;
+				top: 10vw;
+				width: 90%;
+				z-index: 999;
+			}
+
+			&:hover {
+				filter: brightness(1.25);
+			}
+
+			&.video {
+
+				&:after {
+					background-image: url(../images/play.svg);
+					background-position: 50% 10%;
+					background-repeat: no-repeat;
+					background-size: 25% auto;
+					content: '';
+					height: 100%;
+					left: 0;
+					position: absolute;
+					top: 0;
+					width: 100%;
+
+					@include breakpoint(600px) {
+						background-position: 50% 35%;
+						background-size: 25% auto;
+					}
+				}
 			}
 		}
 	}
@@ -65,6 +102,11 @@
 			@include font-family('overpass');
 			color: $color_white;
 			cursor: pointer;
+			font-size: 0.75rem;
+
+			@include breakpoint(600px) {
+				font-size: 1.25rem;
+			}
 
 			@include breakpoint(1400px) {
 				font-size: 1.75rem;
@@ -77,6 +119,59 @@
 			&.active {
 				color: $color_orange;
 			}
+		}
+	}
+
+	.overlay {
+		background: rgba(0,0,0,0.75);
+		display: none;
+		height: 100%;
+		left: 0;
+		position: fixed;
+		top: 0;
+		width: 100%;
+		z-index: 998;
+
+		.close {
+			color: $color_white;
+			cursor: pointer;
+			font-size: 1.5rem;
+			margin: 0;
+			position: fixed;
+			text-align: center;
+			top: 2.5vw;
+			width: 100%;
+
+			&:hover {
+				color: #ccc;
+			}
+		}
+
+		// We are appending elements to overlay
+		iframe {
+			height: 60vh;
+			margin: 20vh 5vw;
+			width: 90vw;
+
+			@include breakpoint(500px) {
+				height: 76vh;
+				margin: 12vh 10vw;
+				width: 80vw;
+			}
+
+			@include breakpoint(1800px) {
+				display: block;
+				height: 76vh;
+				margin: 12vh auto;
+				width: 1400px;
+			}
+		}
+
+		img {
+			display: block;
+			height: auto;
+			margin: auto;
+			width: auto;
 		}
 	}
 }
