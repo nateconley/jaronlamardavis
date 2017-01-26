@@ -51,8 +51,12 @@ $grid.imagesLoaded().progress( function() {
  */
 
 $('.grid-item.video').click(function() {
-	var iframe = $(this).children('.embed');
-	$('.overlay').append($(iframe).clone());
+	var embed = $(this).children('.embed').clone();
+	var iframe = $(embed).children('iframe');
+	// Add autoplay to src
+	$(iframe).attr('src', $(iframe).attr('src').replace('feature=oembed', 'autoplay=1'));
+
+	$('.overlay').append($(embed));
 	$('.overlay').show();
 });
 
