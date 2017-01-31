@@ -1,26 +1,27 @@
-(function($) {
-$(document).ready(function(){
+(function() {
 
-// Main Navigation
-$('.hamburger').click(function(){
-	$(this).toggleClass('open');
-	$('#primary-menu').toggleClass('open');
+// Main navigation
+document.querySelector('.hamburger').addEventListener('click', function() {
+	this.classList.toggle('open');
+	document.getElementById('primary-menu').classList.toggle('open');
 });
 
 // Parallax effects
-$(window).scroll(function(){
-	var scrollHeight = $(this).scrollTop();
-	// var blur = (scrollHeight * .03) + 'px';
-	// $('.site-header .foreground').css('filter', 'blur(' + blur + ')');
+window.addEventListener('scroll', function() {
+	var scrollHeight = this.scrollY;
+	var siteHeader = document.querySelector('.site-header h2');
+	
+	if (siteHeader) {
+		siteHeader.style.transform = 'translate(0px,' + scrollHeight * 0.4 + '%)';
+	}
 
-	$('.site-header .foreground').css({
-		'filter' : 'blur(' + scrollHeight * 0.03 + 'px)',
-	});
+	// Only do our blur manipulation half the time
+	if (scrollHeight % 2 === 0 && scrollHeight > 3) {
+		return;
+	}
 
-	$('.site-header h2').css({
-		'transform' : 'translate(0px,' + scrollHeight * 0.4 + '%)',
-	});
+	var foreground = document.querySelector('.site-header .foreground');
+	foreground.style.filter = 'blur(' + (scrollHeight * .03) + 'px)';
 });
 
-});
-})(jQuery);
+})();
