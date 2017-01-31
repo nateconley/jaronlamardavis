@@ -7,7 +7,15 @@ get_header(); ?>
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
 <div class="inner-text">
-	<?php the_content(); ?>
+	<?php $post_id = get_the_id(); ?>
+	<div class="show-title">
+	<h1><?php echo get_post_meta( $post_id, 'jldavis-show-venue', true ); ?></h1><br />
+	<h2><?php echo get_post_meta( $post_id, 'jldavis-show-city', true ); ?></h2><br />
+	<h3><?php echo date( 'n.j.y', get_post_meta( $post_id, 'jldavis-show-date', true ) ); ?>
+	<?php echo get_post_meta( $post_id, 'jldavis-show-time', true ); ?>
+	</div></h3>
+	<?php echo get_post_meta( $post_id, 'jldavis-show-details', true ); ?><br />
+	<a href="<?php echo home_url(); ?>/dates"><< Back to Dates</a>
 </div>
 
 <?php endwhile; else : ?>

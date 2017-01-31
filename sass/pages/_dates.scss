@@ -9,20 +9,20 @@
 			&:hover {
 				color: $color_orange;
 
-				p.city {
+				p span {
 					color: $color_orange;
 				}
 			}
 
 			p {
-				display: inline-block;
-				line-height: 0;
+				margin: 0;
+				padding: 1rem;
 
 				@include breakpoint(500px) {
 					font-size: 1.25rem;
 				}
 
-				&.city {
+				span {
 					color: #333;
 					font-weight: 700;
 					margin: 0 1rem;
@@ -34,6 +34,43 @@
 		&:nth-child(2n) {
 			background: #ccc;
 			border-radius: 0.25rem;
+		}
+	}
+
+	h2.not-found {
+		text-align: center;
+	}
+}
+
+// Single shows page
+.single-shows {
+
+	.inner-text {
+
+		.show-title {
+			margin: 0;
+
+			h1,
+			h2,
+			h3 {
+				display: inline-block;
+				margin: 0.5rem 0;
+			}
+
+			h1,
+			h3 {
+				background: $color_black;
+				color: $color_white;
+			}
+
+			h2 {
+				background: $color_blue;
+				color: $color_white;
+			}
+		}
+
+		a {
+			color: $color_blue;
 		}
 	}
 }

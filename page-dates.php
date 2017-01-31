@@ -29,9 +29,7 @@ $query = new WP_Query( $args );
 
 $format = '<div class="date">
 	<a href="%1$s">
-		<p class="venue">%2$s</p>
-		<p class="city">%3$s</p>
-		<p class="date">%4$s</p>
+		<p>%2$s<span class="city"> %3$s </span>%4$s</p>
 	</a>
 </div>';
 
@@ -53,6 +51,8 @@ if ( $query->have_posts() ) {
 			$date
 		);
 	}
+} else {
+	echo '<h2 class="not-found">No Dates Found</h2>'; 
 }
 
 ?>
