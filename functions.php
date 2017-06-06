@@ -63,6 +63,14 @@ class Jldavis_Functions {
 			'20170121'
 		);
 
+		// Fontawesome
+		wp_enqueue_style(
+			'font-awesome',
+			'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css',
+			array(),
+			'20170605'
+		);
+
 		// Google fonts
 		wp_enqueue_style( 
 			'google-fonts',
