@@ -76,7 +76,7 @@ class Jldavis_Functions {
 			'jldavis-styles',
 			get_stylesheet_directory_uri() . '/css/styles.css',
 			array(),
-			'20170121'
+			'20170605'
 		);
 
 		// Scripts
